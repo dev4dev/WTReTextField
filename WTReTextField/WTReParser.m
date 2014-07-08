@@ -380,6 +380,16 @@
 
 // parser implementation
 
+@interface WTReParser ()
+
+@property (nonatomic, strong) WTReGroup *node;
+@property (nonatomic, assign) BOOL finished;
+@property (nonatomic, assign) BOOL ignoreCase;
+@property (nonatomic, strong) NSRegularExpression *exactQuantifierRegex;
+@property (nonatomic, strong) NSRegularExpression *rangeQuantifierRegex;
+
+@end
+
 @implementation WTReParser
 
 - (id)initWithPattern:(NSString *)pattern

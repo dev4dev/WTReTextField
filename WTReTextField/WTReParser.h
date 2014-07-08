@@ -22,19 +22,11 @@
 @class WTReGroup;
 
 @interface WTReParser : NSObject
-{
-    NSString *_pattern;
-    BOOL _ignoreCase;
-    WTReGroup *_node;
-    BOOL _finished;
-    NSRegularExpression *_exactQuantifierRegex;
-    NSRegularExpression *_rangeQuantifierRegex;
-}
 
 - (id)initWithPattern:(NSString*)pattern;
 - (id)initWithPattern:(NSString*)pattern ignoreCase:(BOOL)ignoreCase;
 - (NSString*)reformatString:(NSString*)input;
 
-@property (readonly, nonatomic) NSString *pattern;
+@property (readonly, nonatomic, copy) NSString *pattern;
 
 @end
